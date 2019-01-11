@@ -25,9 +25,8 @@ public class OSCSliderController : OSCTransmitterObjectBase
     {
         counter++;
 
-        //controllable = GetComponent<VRTK_PhysicsSlider>();
-        //controllable.stepValueRange = sliderRange;
-        //controllable.stepSize = stepSize;
+        controllable.stepValueRange = sliderRange;
+        controllable.stepSize = stepSize;
 
         if (oscAddress == null) oscAddress = (controllerName != null) ? string.Format("{0}/", controllerName) : 
             string.Format("/slider/{0}/", counter);
