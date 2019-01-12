@@ -27,7 +27,7 @@ public class OSCSliderController : OSCTransmitterObjectBase
 
         // Set up name and address
         controllerName = string.IsNullOrEmpty(controllerName) ? "slider" : controllerName;
-        oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/{0}/{1}/", controllerName, counter) : oscAddress;
+        oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/{0}/{1}", controllerName, counter) : oscAddress;
 
         //Update VRTK Slider Settings 
         controllable.stepValueRange = sliderRange;
