@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VRTK.Controllables;
 
 public class OSCControllerReactor : MonoBehaviour
 {
 
     protected VRTK_BaseControllable controllableEvents;
-    public  OSCTransmitterObjectBase oscTransmitter;
+    public  OSCTransmitterObjectBase oscTransmitObject;
+
+    public Image sliderImage;
 
     private float currentValue = 0;
 
@@ -34,14 +37,16 @@ public class OSCControllerReactor : MonoBehaviour
     protected virtual void ValueChanged(object sender, ControllableEventArgs e)
     {
         currentValue = e.value;
-        oscTransmitter.SendOSCMessage(oscTransmitter.oscAddress, currentValue);
-       
+        oscTransmitObject.SendOSCMessage(oscTransmitObject.oscAddress, currentValue);
+
+        // Update Progress Slider
+        sliderImage.fillAmount = e.normalizedValue;
     }
 
     private void FixedUpdate()
     {
-        if (!oscTransmitter.sendContinously)
-            { oscTransmitter.SendOSCMessage(oscTransmitter.oscAddress, currentValue); }
+        if (oscTransmitObject.sendContinously)
+            { oscTransmitObject.SendOSCMessage(oscTransmitObject.oscAddress, currentValue); }
     }
 
 }

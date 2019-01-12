@@ -204,6 +204,27 @@ namespace UnityOSC
 			_typeTag += typeTag;
 			_data.Add(value);
 		}
-		#endregion
-	}
+
+        public override string ToString()
+        {
+            string messageStr = Address;
+            int idx = 0;
+
+            foreach (char tag in _typeTag)
+            {
+                switch (tag)
+                {
+                    case DEFAULT:
+                        continue;
+                    default:
+                        messageStr = string.Format("{0} {1}", messageStr, _data[idx]);
+                        break;
+                }
+                idx++;
+            }
+
+            return messageStr;
+        }
+        #endregion
+    }
 }

@@ -407,7 +407,7 @@ namespace VRTK
                 doorRigidbody = actualDoor.AddComponent<Rigidbody>();
                 doorRigidbody.angularDrag = releasedFriction;
             }
-            doorRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // otherwise door will not react to fast moving controller
+            doorRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative; // otherwise door will not react to fast moving controller
             doorRigidbody.isKinematic = false; // in case nested door as already created this
 
             doorHinge = actualDoor.GetComponent<HingeJoint>();

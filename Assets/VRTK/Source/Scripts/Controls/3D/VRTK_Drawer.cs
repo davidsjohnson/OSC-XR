@@ -202,7 +202,7 @@ namespace VRTK
             if (drawerRigidbody == null)
             {
                 drawerRigidbody = gameObject.AddComponent<Rigidbody>();
-                drawerRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+                drawerRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             }
             drawerRigidbody.isKinematic = false;
 
