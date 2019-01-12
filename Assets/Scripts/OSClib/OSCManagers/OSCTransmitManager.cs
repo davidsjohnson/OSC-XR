@@ -65,11 +65,16 @@ public class OSCTransmitManager : MonoBehaviour
 
     public void SendToReceiver(string name,  string address, params object[] values)
     {
+        // Validate that address starts with a /
+        address = address[0] != '/' ? '/' + address : address;
+
         OSCMessage message = new OSCMessage(address);
         foreach (var msgvalue in values)
         {
             message.Append(msgvalue);
         }
+
+        Debug.Log(string.Format("Sending OSC to Receiver {0}: {2}", name, address, message));
 
         oscReceiversDict[name].Send(message);
     }
