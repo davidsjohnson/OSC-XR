@@ -66,7 +66,6 @@ public class OSCTransmitManager : MonoBehaviour
     public void SendToReceiver(string name,  string address, params object[] values)
     {
         // Validate that address starts with a /
-        Debug.Log("Addr:" + address);
         address = address[0] != '/' ? '/' + address : address;
 
         OSCMessage message = new OSCMessage(address);

@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 6358148426834077701}
   - component: {fileID: 6228330837330631111}
   - component: {fileID: 236331784800909740}
-  - component: {fileID: 6738145239439830390}
+  - component: {fileID: 3667543449677620103}
   - component: {fileID: 7921847152943514249}
   m_Layer: 0
   m_Name: Handle
@@ -192,7 +192,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6738145239439830390
+--- !u!114 &3667543449677620103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
