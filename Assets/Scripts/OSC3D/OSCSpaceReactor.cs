@@ -10,6 +10,7 @@ public class OSCSpaceReactor : MonoBehaviour
 
     private float equalityFidelity = 0.001f;
     private Vector3 prevPosition;
+    private Vector3 prevStepValues;
 
     private Limits2D constrainLimit = new Limits2D(-0.5f, 0.5f);
 
@@ -29,49 +30,35 @@ public class OSCSpaceReactor : MonoBehaviour
 
     private void Update()
     {
-        ConstrainToParent();
-
-        Vector3 pos = transform.localPosition;
-        bool localPosChanged = !VRTK_SharedMethods.Vector3ShallowCompare(prevPosition, pos, equalityFidelity);
-        if (localPosChanged)
-        {
-            spaceController.SendOSCMessage(spaceController.oscAddress, CalcOSCValues(pos));
+        Vector3 stepValues = CalcOSCValues(transform.localPosition);
+        bool stepsChanged = !VRTK_SharedMethods.Vector3ShallowCompare(prevStepValues, stepValues, equalityFidelity);
+        if (stepsChanged)
+        {   
+            spaceController.SendOSCMessage(spaceController.oscAddress, stepValues.x, stepValues.y, stepValues.z);
         }
-
-        prevPosition = pos;
+        prevStepValues = stepValues;
     }
 
-    private object[] CalcOSCValues(Vector3 pos)
+    private Vector3 CalcOSCValues(Vector3 pos)
     {
-        object[] values = new object[3];
+        Vector3 values = new Vector3();
 
-        values[0] = MapValue(pos.x, constrainLimit, spaceController.xValueRange);
-        values[1] = MapValue(pos.x, constrainLimit, spaceController.yValueRange);
-        values[2] = MapValue(pos.x, constrainLimit, spaceController.zValueRange);
+        values.x = GetStepValue(MapValue(pos.x, constrainLimit, spaceController.xValueRange), spaceController.xStep);
+        values.y = GetStepValue(MapValue(pos.y, constrainLimit, spaceController.yValueRange), spaceController.yStep);
+        values.z = GetStepValue(MapValue(pos.z, constrainLimit, spaceController.zValueRange), spaceController.zStep);
 
         return values;
-    }
-
-
-    private void ConstrainToParent()
-    {
-        //Constrain Object to parent
-        Vector3 newPos = transform.localPosition;
-
-        newPos.x += Random.Range(-0.02f, 0.02f);
-        newPos.y += Random.Range(-0.02f, 0.02f);
-        newPos.z += Random.Range(-0.02f, 0.02f);
-
-        newPos.x = Mathf.Min(Mathf.Max(newPos.x, constrainLimit.minimum), constrainLimit.maximum);
-        newPos.y = Mathf.Min(Mathf.Max(newPos.y, constrainLimit.minimum), constrainLimit.maximum);
-        newPos.z = Mathf.Min(Mathf.Max(newPos.z, constrainLimit.minimum), constrainLimit.maximum);
-
-        transform.localPosition = newPos;
     }
 
     private float MapValue(float value, Limits2D inRange, Limits2D outRange)
     {
         return outRange.minimum + (outRange.maximum - outRange.minimum) * ((value - inRange.minimum) / (inRange.maximum - inRange.minimum));
+    }
+
+
+    public virtual float GetStepValue(float currentValue, float stepSize)
+    {
+        return Mathf.Round(currentValue / stepSize) * stepSize;
     }
 
 }
