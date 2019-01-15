@@ -25,6 +25,10 @@ public class OSCPadController : OSCTransmitterObjectBase
         // Set up name and address
         controllerName = string.IsNullOrEmpty(controllerName) ? "button" : controllerName;
         oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/{0}/{1}", controllerName, counter) : oscAddress;
+
+        Vector3 pos = transform.localPosition;
+        pos.z += .5f;
+        transform.localPosition = pos;
     }
 
     // Hack to update VRTK slider maximum length when scaling the OSC Slider object
