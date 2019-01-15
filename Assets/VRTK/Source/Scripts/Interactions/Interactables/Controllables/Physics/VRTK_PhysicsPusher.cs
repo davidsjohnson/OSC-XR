@@ -50,6 +50,8 @@ namespace VRTK.Controllables.PhysicsBased
         protected bool pressedDown;
         protected float previousPositionTarget;
 
+        public Transform parent;
+
         /// <summary>
         /// The GetValue method returns the current position value of the pusher.
         /// </summary>
@@ -108,6 +110,7 @@ namespace VRTK.Controllables.PhysicsBased
         protected override void OnEnable()
         {
             base.OnEnable();
+            pressedDistance *= parent.localScale.y;   // hack for changing pressing distance on object scale
             SetupJoint();
             previousLocalPosition = Vector3.one * float.MaxValue;
             pressedDown = false;

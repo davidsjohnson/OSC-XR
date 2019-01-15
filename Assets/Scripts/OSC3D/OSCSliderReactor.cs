@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRTK.Controllables;
 
-public class OSCControllerReactor : MonoBehaviour
+public class OSCSliderReactor : MonoBehaviour
 {
 
     protected VRTK_BaseControllable controllableEvents;
