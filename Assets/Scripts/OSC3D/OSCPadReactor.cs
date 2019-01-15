@@ -13,22 +13,13 @@ public class OSCPadReactor : MonoBehaviour
 
     private OSCPadController oscPad;
 
+    private bool padPressed;
+
     public virtual void OnEnable()
     {
+        padPressed = false;
         controllable = GetComponent<VRTK_BaseControllable>();
-        ManageListeners(true);
-
         oscPad = oscTransmitObject as OSCPadController;
-    }
-
-    public virtual void OnDisable()
-    {
-        ManageListeners(false);
-    }
-
-    protected virtual void ManageListeners(bool state)
-    {
-
     }
 
     private void FixedUpdate()
@@ -42,13 +33,28 @@ public class OSCPadReactor : MonoBehaviour
         // Send continously simply sends 
         if (oscTransmitObject.sendContinously)
             oscTransmitObject.SendOSCMessage(string.Format("{0}/pos", oscTransmitObject.oscAddress), currValue);
+    }
 
-        List<object> values = new List<object>();
-        if (oscPad.sendTrigger && currValue > oscPad.triggerThreshold)
+    private void Update()
+    {
+        // Simple Press Release check (should update to VRTK event based mechanism)
+        if (!padPressed && currValue > oscPad.triggerThreshold)
         {
-            if (oscPad.sendVelocity)
-                values.Add((currValue - prevValue) / Time.fixedDeltaTime);
-            oscTransmitObject.SendOSCMessage(string.Format("{0}/pressed", oscTransmitObject.oscAddress), values.ToArray());
+            if (oscPad.sendPressedReleased)
+            {
+                List<object> values = new List<object>();
+                if (oscPad.sendVelocity)
+                    values.Add((currValue - prevValue) / Time.fixedDeltaTime);
+                oscTransmitObject.SendOSCMessage(string.Format("{0}/pressed", oscTransmitObject.oscAddress), values.ToArray());
+                
+            }
+            padPressed = true;
+        }
+        else if (padPressed && currValue < oscPad.triggerThreshold)
+        {
+            if (oscPad.sendPressedReleased)
+                oscTransmitObject.SendOSCMessage(string.Format("{0}/released", oscTransmitObject.oscAddress));
+            padPressed = false;
         }
     }
 
