@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class OSCSpaceController : OSCTransmitterObjectBase
+public class OSC3DGridController : OSCTransmitterObjectBase
 {
     [Header("Controller Settings")]
 

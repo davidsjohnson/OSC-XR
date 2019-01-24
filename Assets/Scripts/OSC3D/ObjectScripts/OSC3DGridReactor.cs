@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class OSCSpaceReactor : MonoBehaviour
+public class OSC3DGridReactor : MonoBehaviour
 {
 
-    public OSCSpaceController spaceController;
+    public OSC3DGridController spaceController;
 
     private float equalityFidelity = 0.001f;
     private Vector3 prevPosition;
