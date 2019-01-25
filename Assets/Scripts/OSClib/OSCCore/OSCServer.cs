@@ -148,7 +148,7 @@ namespace UnityOSC
                 _udpClient.Client.ReceiveBufferSize = _bufferSize;
                 _receiverThread = new Thread(new ThreadStart(this.ReceivePool));
 				_receiverThread.Start();
-                Debug.Log(string.Format("OSC Listening on port {0}", _localPort));
+                Debug.Log(string.Format("OSC Receiver listening on port {0}", _localPort));
 			}
 			catch(Exception e)
 			{
@@ -175,7 +175,6 @@ namespace UnityOSC
 		private void Receive()
 		{
 			IPEndPoint ip = null;
-            UnityEngine.Debug.Log("Receiving....");
 			try
 			{
 				byte[] bytes = _udpClient.Receive(ref ip);
@@ -189,8 +188,12 @@ namespace UnityOSC
                     PacketReceivedEvent(this, _lastReceivedPacket);	
 				}
 			}
-			catch{
-				throw new Exception(String.Format("Can't create server at port {0}", _localPort));
+            catch(System.Threading.ThreadAbortException)
+            {
+                Debug.Log("OSC Receiver shutting down");
+            }
+            catch (Exception e){
+				throw new Exception(String.Format("Can't create server at port {0} - {1}", _localPort, e));
   			}
 		}
 		
