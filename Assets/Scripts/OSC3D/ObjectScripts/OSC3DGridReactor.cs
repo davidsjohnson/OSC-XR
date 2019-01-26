@@ -23,8 +23,8 @@ public class OSC3DGridReactor : MonoBehaviour
     {
         if (spaceController.sendContinously)
         {
-            Vector3 pos = transform.localPosition;
-            spaceController.SendOSCMessage(spaceController.oscAddress, CalcOSCValues(pos));
+            Vector3 stepValues = CalcOSCValues(transform.localPosition);
+            spaceController.SendOSCMessage(string.Format("{0}/values", spaceController.oscAddress), stepValues.x, stepValues.y, stepValues.z);
         }
     }
 
@@ -34,7 +34,7 @@ public class OSC3DGridReactor : MonoBehaviour
         bool stepsChanged = !VRTK_SharedMethods.Vector3ShallowCompare(prevStepValues, stepValues, equalityFidelity);
         if (stepsChanged)
         {   
-            spaceController.SendOSCMessage(spaceController.oscAddress, stepValues.x, stepValues.y, stepValues.z);
+            spaceController.SendOSCMessage(string.Format("{0}/values", spaceController.oscAddress) , stepValues.x, stepValues.y, stepValues.z);
         }
         prevStepValues = stepValues;
     }

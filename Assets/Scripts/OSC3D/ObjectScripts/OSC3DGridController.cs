@@ -19,12 +19,9 @@ public class OSC3DGridController : OSCTransmitterObjectBase
     public Limits2D zValueRange = new Limits2D(0f, 1.0f);
     public float zStep = 0.01f;
 
-    private static int counter;
     private void Start()
     {
-        counter++;
         // Set up name and address
-        controllerName = string.IsNullOrEmpty(controllerName) ? "space" : controllerName;
-        oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/{0}/{1}", controllerName, counter) : oscAddress;
+        oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/grid3d") : oscAddress;
     }
 }

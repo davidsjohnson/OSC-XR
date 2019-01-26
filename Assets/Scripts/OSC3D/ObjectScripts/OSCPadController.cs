@@ -16,15 +16,10 @@ public class OSCPadController : OSCTransmitterObjectBase
     [Header("Button Config")]
     public VRTK_PhysicsPusher button;
 
-    private static int counter = 0;
-
     private void Start()
     {
-        counter++;
-
         // Set up name and address
-        controllerName = string.IsNullOrEmpty(controllerName) ? "button" : controllerName;
-        oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/{0}/{1}", controllerName, counter) : oscAddress;
+        oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("pad") : oscAddress;
     }
 
     // Hack to update VRTK slider maximum length when scaling the OSC Slider object

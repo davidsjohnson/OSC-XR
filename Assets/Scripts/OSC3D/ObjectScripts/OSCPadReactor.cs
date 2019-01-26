@@ -15,28 +15,33 @@ public class OSCPadReactor : MonoBehaviour
 
     private bool padPressed;
 
+    private Rigidbody rb;
+
     public virtual void OnEnable()
     {
         padPressed = false;
         controllable = GetComponent<VRTK_BaseControllable>();
         oscPad = oscTransmitObject as OSCPadController;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        prevValue = currValue;
-        currValue = controllable.GetNormalizedValue();
-        currValue = Approximately(0, currValue) ? 0f : // if close to 0 set to zero
-                    Approximately(1, currValue) ? 1f : // if close to 1 set to one
-                    Mathf.Round(currValue*1000)/1000f; // otherwise round value
-
         // Send continously simply sends 
         if (oscTransmitObject.sendContinously)
-            oscTransmitObject.SendOSCMessage(string.Format("{0}/pos", oscTransmitObject.oscAddress), currValue);
+            oscTransmitObject.SendOSCMessage(string.Format("{0}/position", oscTransmitObject.oscAddress), oscTransmitObject.controllerID, currValue);
     }
 
     private void Update()
     {
+        // Store Values to calculate simple velocity
+        prevValue = currValue;
+        currValue = controllable.GetNormalizedValue();
+        currValue = Approximately(0, currValue) ? 0f : // if close to 0 set to zero
+                    Approximately(1, currValue) ? 1f : // if close to 1 set to one
+                    Mathf.Round(currValue * 1000) / 1000f; // otherwise round value
+
         // Simple Press Release check (should update to VRTK event based mechanism)
         if (!padPressed && currValue > oscPad.triggerThreshold)
         {
@@ -44,7 +49,7 @@ public class OSCPadReactor : MonoBehaviour
             {
                 List<object> values = new List<object>();
                 if (oscPad.sendVelocity)
-                    values.Add((currValue - prevValue) / Time.fixedDeltaTime);
+                    values.Add(Mathf.Min(rb.velocity.magnitude/.5f, 1));        // normalize magnitude to .5 (based on experience)
                 oscTransmitObject.SendOSCMessage(string.Format("{0}/pressed", oscTransmitObject.oscAddress), values.ToArray());
                 
             }
@@ -53,7 +58,12 @@ public class OSCPadReactor : MonoBehaviour
         else if (padPressed && currValue < oscPad.triggerThreshold)
         {
             if (oscPad.sendPressedReleased)
-                oscTransmitObject.SendOSCMessage(string.Format("{0}/released", oscTransmitObject.oscAddress));
+            {
+                List<object> values = new List<object>();
+                if (oscPad.sendVelocity)
+                    values.Add(Mathf.Min(rb.velocity.magnitude / .5f, 1));
+                oscTransmitObject.SendOSCMessage(string.Format("{0}/released", oscTransmitObject.oscAddress), values.ToArray());
+            }
             padPressed = false;
         }
     }

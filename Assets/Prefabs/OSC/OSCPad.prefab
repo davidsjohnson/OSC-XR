@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5006167396105605768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.125, y: 0.02, z: 0.125}
+  m_LocalScale: {x: 0.15, y: 0.02, z: 0.15}
   m_Children: []
   m_Father: {fileID: 5006167396321107269}
   m_RootOrder: 1
@@ -123,13 +123,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a139d157e7934cc42a8cb71517b15901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerName: 
+  controllerID: 0
   receiverNames: []
   oscAddress: 
   sendContinously: 0
   sendPressedReleased: 1
   triggerThreshold: 0.5
-  sendVelocity: 0
+  sendVelocity: 1
   button: {fileID: 7254761868315021583}
 --- !u!1 &5006167397104475443
 GameObject:
@@ -250,7 +250,7 @@ MonoBehaviour:
   restingPosition: 0
   restingPositionThreshold: 0.01
   positionTarget: 0
-  targetForce: 10
+  targetForce: 100
   parent: {fileID: 5006167396321107269}
 --- !u!54 &1106925930794654932
 Rigidbody:

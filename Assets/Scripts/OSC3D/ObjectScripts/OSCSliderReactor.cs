@@ -37,7 +37,7 @@ public class OSCSliderReactor : MonoBehaviour
     protected virtual void ValueChanged(object sender, ControllableEventArgs e)
     {
         currentValue = e.value;
-        oscTransmitObject.SendOSCMessage(oscTransmitObject.oscAddress, currentValue);
+        oscTransmitObject.SendOSCMessage(string.Format("{0}/value", oscTransmitObject.oscAddress), currentValue);
 
         // Update Progress Slider
         sliderImage.fillAmount = e.normalizedValue;
@@ -46,7 +46,7 @@ public class OSCSliderReactor : MonoBehaviour
     private void FixedUpdate()
     {
         if (oscTransmitObject.sendContinously)
-            { oscTransmitObject.SendOSCMessage(oscTransmitObject.oscAddress, currentValue); }
+            { oscTransmitObject.SendOSCMessage(string.Format("{0}/value", oscTransmitObject.oscAddress), currentValue); }
     }
 
 }

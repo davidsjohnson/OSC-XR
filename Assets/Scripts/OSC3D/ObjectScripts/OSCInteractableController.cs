@@ -38,8 +38,7 @@ public class OSCInteractableController : OSCTransmitterObjectBase
     {
         counter++;
         // Set up name and address
-        controllerName = string.IsNullOrEmpty(controllerName) ? "interactable" : controllerName;
-        oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/{0}/{1}", controllerName, counter) : oscAddress;
+        oscAddress = string.IsNullOrEmpty(oscAddress) ? "/interactable" : oscAddress;
 
         prevPositionLocal = interactableObject.transform.localPosition;
         prevPositionWorld = interactableObject.transform.position;

@@ -10,12 +10,13 @@ public class OSCTransmitterObjectBase : MonoBehaviour
 
     [Header("OSC Config")]
 
-    public string controllerName;
+    [Tooltip("The controller ID is the first argument sent from every message")]
+    public int controllerID;
 
     [Tooltip("Names of OSC Receivers to send messages to. Leave empty to send to all receivers in Transmitter DB")]
     public List<string> receiverNames = new List<string>();
 
-    [Tooltip("OSC Address for slider value. Leave Blank to use Object Name as Address.")]
+    [Tooltip("Base OSC Address. Leave Blank for using default base address of widget")]
     public string oscAddress;
 
     [Tooltip("If false controller will only send values when the slider is changed; " +
@@ -24,16 +25,21 @@ public class OSCTransmitterObjectBase : MonoBehaviour
 
     public void SendOSCMessage(string address, params object[] values)
     {
+        // Add controller ID to params
+        object[] tmp = new object[values.Length + 1];
+        tmp[0] = controllerID;
+        values.CopyTo(tmp, 1);
+
         if (receiverNames.Count > 0)
         {
             foreach (var cname in receiverNames)
             {
-                OSCTransmitManager.Transmitter.SendToReceiver(cname, address, values);
+                OSCTransmitManager.Transmitter.SendToReceiver(cname, address, tmp); // include controller ID for every message
             }
         }
         else
         {
-            OSCTransmitManager.Transmitter.SendToReceivers(address, values);
+            OSCTransmitManager.Transmitter.SendToReceivers(address, tmp); // include controller ID for every message
         }
     }
 }
