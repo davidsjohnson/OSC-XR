@@ -1,23 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class OscGrid3dMarker : MonoBehaviour
+﻿namespace OSCXR
 {
-    public Transform followTransform;
+    using UnityEngine;
 
-    [Header("Constrain Axis")]
-    public bool x;
-    public bool y;
-    public bool z;
-
-    private void Update()
+    public class OscGrid3dMarker : MonoBehaviour
     {
-        Vector3 newPos = followTransform.localPosition;
-        if (x) newPos.x = transform.localPosition.x;
-        else if (y) newPos.y = transform.localPosition.y;
-        else if (z) newPos.z = transform.localPosition.z;
+        public Transform followTransform;
 
-        transform.localPosition = newPos;
+        [Header("Constrain Axis")]
+        public bool x;
+        public bool y;
+        public bool z;
+
+        private void Update()
+        {
+            Vector3 newPos = followTransform.localPosition;
+            if (x) newPos.x = transform.localPosition.x;
+            else if (y) newPos.y = transform.localPosition.y;
+            else if (z) newPos.z = transform.localPosition.z;
+
+            transform.localPosition = newPos;
+        }
     }
 }

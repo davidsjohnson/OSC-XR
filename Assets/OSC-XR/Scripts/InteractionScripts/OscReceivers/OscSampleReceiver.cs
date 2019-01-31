@@ -1,22 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityOSC;
-
-public class OscSampleReceiver : MonoBehaviour
+﻿namespace OSCXR
 {
-    private Text text;
-    private void Start()
-    {
-        OscReceiverManager.ReceiverManager.RegisterOscAddress("/tnseprocessed/done", OscReceivedHandler);
-        text = GetComponent<Text>();
-        text.text = "Press to Run...";
-    }
+    using UnityEngine;
+    using UnityEngine.UI;
+    using UnityOSC;
 
-    public void OscReceivedHandler(OSCMessage message)
+    public class OscSampleReceiver : MonoBehaviour
     {
-        text.text = "Done";
-    }
+        private Text text;
+        private void Start()
+        {
+            OscReceiverManager.ReceiverManager.RegisterOscAddress("/tnseprocessed/done", OscReceivedHandler);
+            text = GetComponent<Text>();
+            text.text = "Press to Run...";
+        }
 
+        public void OscReceivedHandler(OSCMessage message)
+        {
+            text.text = "Done";
+        }
+    }
 }
