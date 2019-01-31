@@ -48,6 +48,7 @@
             {
                 DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "POINTER ENTER", e.target, e.raycastHit, e.distance, e.destinationPosition);
             }
+            
         }
 
         private void DestinationMarkerHover(object sender, DestinationMarkerEventArgs e)
