@@ -1,4 +1,5 @@
-﻿namespace OSCXR
+﻿
+namespace OSCXR
 {
     using UnityEngine;
     using UnityEngine.UI;
