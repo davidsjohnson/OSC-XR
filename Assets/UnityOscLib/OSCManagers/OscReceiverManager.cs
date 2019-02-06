@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System;
-using System.Text.RegularExpressions;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityOSC;
 
 public class OscAddressExistsException : System.Exception
@@ -10,8 +10,31 @@ public class OscAddressExistsException : System.Exception
     public OscAddressExistsException(string message) : base(message) { }
 }
 
+[Serializable]
+public class UnityEventOscMessage : UnityEvent<OSCMessage> { }
+
 public class OscReceiverManager : MonoBehaviour
 {
+    [Serializable]
+    public class OscAddressHandler
+    {
+        public string oscAddress;
+        public UnityEventOscMessage oscEventHandler = new UnityEventOscMessage();
+
+        public OscAddressHandler() { }
+
+        public OscAddressHandler(string addr)
+        {
+            oscAddress = addr;
+        }
+
+        public OscAddressHandler(string addr, UnityAction<OSCMessage> handler)
+        {
+            oscAddress = addr;
+            oscEventHandler.AddListener(handler);
+        }
+    }
+
     public int listeningPort = 10101;
     public bool registerDefaultHandler = true;
 
@@ -20,7 +43,14 @@ public class OscReceiverManager : MonoBehaviour
     public static OscReceiverManager ReceiverManager { get; private set; }
 
     private OSCReciever oscReciever = new OSCReciever();
-    private Dictionary<string, OscReceivedHandler> registeredAddresses = new Dictionary<string, OscReceivedHandler>();
+
+    //Finish This...
+    [SerializeField]
+
+    private List<OscAddressHandler> oscAddressHandlers = new List<OscAddressHandler>()
+    {
+        new OscAddressHandler("/*"),
+    };
 
     void Awake()
     {
@@ -50,10 +80,10 @@ public class OscReceiverManager : MonoBehaviour
         StopCoroutine("ProcessMessages");
     }
 
-    public void RegisterOscAddress(string oscAddress, OscReceivedHandler handler) 
+    public void RegisterOscAddress(string oscAddress, UnityAction<OSCMessage> handler) 
     {
-        if (registeredAddresses.ContainsKey(oscAddress)) throw new OscAddressExistsException("OSC Address already registered");
-        registeredAddresses[oscAddress] = handler;
+        // Change to dict or tree implementation for better routing capabilities
+        oscAddressHandlers.Add(new OscAddressHandler(oscAddress, handler));
     }
 
     private IEnumerator ProcessMessages() 
@@ -63,10 +93,10 @@ public class OscReceiverManager : MonoBehaviour
             while (oscReciever.hasWaitingMessages())
             {
                 OSCMessage message = oscReciever.getNextMessage();
-                foreach (var kv in registeredAddresses)
+                foreach (var addrHandler in oscAddressHandlers)
                 {
-                    if (kv.Key.Equals(message.Address)) kv.Value(message);
-                    else if (kv.Key.Equals("/*")) kv.Value(message);
+                    if (addrHandler.oscAddress.Equals(message.Address)) addrHandler.oscEventHandler.Invoke(message);
+                    else if (addrHandler.oscAddress.Equals("/*")) addrHandler.oscEventHandler.Invoke(message);
                 }
             }
             yield return new WaitForSeconds(.01f);
@@ -74,7 +104,7 @@ public class OscReceiverManager : MonoBehaviour
 
     }
 
-    private void DefaultHandler(OSCMessage message)
+    public void DefaultHandler(OSCMessage message)
     {
         Debug.Log(string.Format("Message Received {0}", message));
     }

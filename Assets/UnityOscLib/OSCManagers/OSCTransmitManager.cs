@@ -55,15 +55,15 @@ public class OSCTransmitManager : MonoBehaviour
         oscReceiversDict[name] = new OSCClient(IPAddress.Parse(host), port);
     }
 
-    public void SendToReceivers(string addresss,  params object[] values)
+    public void SendOscMessageAll(string addresss,  params object[] values)
     {
         foreach(var entry in oscReceiversDict)
         {
-            SendToReceiver(entry.Key,addresss, values);
+            SendOscMessage(entry.Key,addresss, values);
         }
     }
 
-    public void SendToReceiver(string name,  string address, params object[] values)
+    public void SendOscMessage(string name,  string address, params object[] values)
     {
         // Validate that address starts with a /
         address = address[0] != '/' ? '/' + address : address;

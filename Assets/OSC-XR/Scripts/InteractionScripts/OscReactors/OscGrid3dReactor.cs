@@ -43,23 +43,11 @@
         {
             Vector3 values = new Vector3();
 
-            values.x = GetStepValue(MapValue(pos.x, constrainLimit, spaceController.xValueRange), spaceController.xStep);
-            values.y = GetStepValue(MapValue(pos.y, constrainLimit, spaceController.yValueRange), spaceController.yStep);
-            values.z = GetStepValue(MapValue(pos.z, constrainLimit, spaceController.zValueRange), spaceController.zStep);
+            values.x = Utils.GetStepValue(Utils.MapValue(pos.x, constrainLimit, spaceController.xValueRange), spaceController.xStep);
+            values.y = Utils.GetStepValue(Utils.MapValue(pos.y, constrainLimit, spaceController.yValueRange), spaceController.yStep);
+            values.z = Utils.GetStepValue(Utils.MapValue(pos.z, constrainLimit, spaceController.zValueRange), spaceController.zStep);
 
             return values;
         }
-
-        private float MapValue(float value, Limits2D inRange, Limits2D outRange)
-        {
-            return outRange.minimum + (outRange.maximum - outRange.minimum) * ((value - inRange.minimum) / (inRange.maximum - inRange.minimum));
-        }
-
-
-        public virtual float GetStepValue(float currentValue, float stepSize)
-        {
-            return Mathf.Round(currentValue / stepSize) * stepSize;
-        }
-
     }
 }

@@ -35,12 +35,12 @@
             {
                 foreach (var cname in receiverNames)
                 {
-                    OSCTransmitManager.Transmitter.SendToReceiver(cname, address, tmp); // include controller ID for every message
+                    OSCTransmitManager.Transmitter.SendOscMessage(cname, address, tmp); // include controller ID for every message
                 }
             }
             else
             {
-                OSCTransmitManager.Transmitter.SendToReceivers(address, tmp); // include controller ID for every message
+                OSCTransmitManager.Transmitter.SendOscMessageAll(address, tmp); // include controller ID for every message
             }
         }
     }
