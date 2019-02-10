@@ -27,13 +27,6 @@
             rb = GetComponent<Rigidbody>();
         }
 
-        private void FixedUpdate()
-        {
-            // Send continously simply sends 
-            if (oscTransmitObject.sendContinously)
-                oscTransmitObject.SendOSCMessage(string.Format("{0}/position", oscTransmitObject.oscAddress), oscTransmitObject.controllerID, currValue);
-        }
-
         private void Update()
         {
             // Store Values to calculate simple velocity

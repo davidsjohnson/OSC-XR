@@ -19,10 +19,11 @@
 
         [Tooltip("Base OSC Address. Leave Blank for using default base address of widget")]
         public string oscAddress;
-
-        [Tooltip("If false controller will only send values when the slider is changed; " +
-            "if true controller will send a continous stream of values on each fixed update.")]
-        public bool sendContinously;
+        public string OscAddress
+        {
+            get { return oscAddress; }
+            set { oscAddress = value; }
+        }
 
         public void SendOSCMessage(string address, params object[] values)
         {

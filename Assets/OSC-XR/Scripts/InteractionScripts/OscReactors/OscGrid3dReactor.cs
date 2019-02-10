@@ -19,15 +19,6 @@
             prevPosition = transform.localPosition;
         }
 
-        private void FixedUpdate()
-        {
-            if (spaceController.sendContinously)
-            {
-                Vector3 stepValues = CalcOSCValues(transform.localPosition);
-                spaceController.SendOSCMessage(string.Format("{0}/values", spaceController.oscAddress), stepValues.x, stepValues.y, stepValues.z);
-            }
-        }
-
         private void Update()
         {
             Vector3 stepValues = CalcOSCValues(transform.localPosition);

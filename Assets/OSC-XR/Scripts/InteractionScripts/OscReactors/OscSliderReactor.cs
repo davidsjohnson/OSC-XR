@@ -43,12 +43,5 @@ namespace OSCXR
             // Update Progress Slider
             sliderImage.fillAmount = e.normalizedValue;
         }
-
-        private void FixedUpdate()
-        {
-            if (oscTransmitObject.sendContinously)
-            { oscTransmitObject.SendOSCMessage(string.Format("{0}/value", oscTransmitObject.oscAddress), currentValue); }
-        }
-
     }
 }
