@@ -3,35 +3,35 @@
     using UnityEngine;
     using VRTK;
 
-    public class OscPointerTriggerReactor : MonoBehaviour
+    public class OscPointerController : BaseOscController
     {
-        public OscPointerTriggerTransmitter oscTrigger;
+        // Reactor Private Members
         public Color hoverColor = Color.cyan;
         public Color selectColor = Color.yellow;
-        public bool logEnterEvent = true;
-        public bool logHoverEvent = false;
-        public bool logExitEvent = true;
-        public bool logSetEvent = true;
 
+        public void Start()
+        {
+            oscAddress = string.IsNullOrEmpty(oscAddress) ? "/pointer/trigger" : oscAddress;
+        }
 
         public virtual void DestinationMarkerEnter(object sender, DestinationMarkerEventArgs e)
         {
-            oscTrigger.SendOSCMessage(string.Format("{0}/enter", oscTrigger.oscAddress));
+            SendOSCMessage(string.Format("{0}/enter", oscAddress));
         }
 
         public void DestinationMarkerHover(object sender, DestinationMarkerEventArgs e)
         {
-            //oscTrigger.SendOSCMessage(string.Format("{0}/hover", oscTrigger.oscAddress), oscTrigger.mark.datum["fpath"]);
+            SendOSCMessage(string.Format("{0}/hover", oscAddress));
         }
 
         public virtual void DestinationMarkerExit(object sender, DestinationMarkerEventArgs e)
         {
-            oscTrigger.SendOSCMessage(string.Format("{0}/exit", oscTrigger.oscAddress));
+            SendOSCMessage(string.Format("{0}/exit", oscAddress));
         }
 
         public virtual void DestinationMarkerSet(object sender, DestinationMarkerEventArgs e)
         {
-            oscTrigger.SendOSCMessage(string.Format("{0}/selected", oscTrigger.oscAddress));
+            SendOSCMessage(string.Format("{0}/selected", oscAddress));
         }
 
         protected virtual void DebugLogger(uint index, string action, Transform target, RaycastHit raycastHit, float distance, Vector3 tipPosition)

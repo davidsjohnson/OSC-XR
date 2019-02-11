@@ -4,7 +4,7 @@
     using VRTK;
     using VRTK.Highlighters;
 
-    public class OscPointerTriggerActivator : MonoBehaviour
+    public class OscPointerActivator : MonoBehaviour
     {
         public VRTK_DestinationMarker pointer;
         public Color hoverColor = Color.cyan;
@@ -41,39 +41,39 @@
         protected virtual void DestinationMarkerEnter(object sender, DestinationMarkerEventArgs e)
         {
             ToggleHighlight(e.target, hoverColor);
-            OscPointerTriggerReactor reactor = e.target.GetComponent<OscPointerTriggerReactor>();
-            if (reactor != null)
+            OscPointerController transmitter = e.target.GetComponent<OscPointerController>();
+            if (transmitter != null)
             {
-                reactor.DestinationMarkerEnter(sender, e);
+                transmitter.DestinationMarkerEnter(sender, e);
             }
         }
 
         private void DestinationMarkerHover(object sender, DestinationMarkerEventArgs e)
         {
-            OscPointerTriggerReactor reactor = e.target.GetComponent<OscPointerTriggerReactor>();
-            if (reactor != null)
+            OscPointerController transmitter = e.target.GetComponent<OscPointerController>();
+            if (transmitter != null)
             {
-                reactor.DestinationMarkerHover(sender, e);
+                transmitter.DestinationMarkerHover(sender, e);
             }
         }
 
         protected virtual void DestinationMarkerExit(object sender, DestinationMarkerEventArgs e)
         {
             ToggleHighlight(e.target, Color.clear);
-            OscPointerTriggerReactor reactor = e.target.GetComponent<OscPointerTriggerReactor>();
-            if (reactor != null)
+            OscPointerController transmitter = e.target.GetComponent<OscPointerController>();
+            if (transmitter != null)
             {
-                reactor.DestinationMarkerExit(sender, e);
+                transmitter.DestinationMarkerExit(sender, e);
             }
         }
 
         protected virtual void DestinationMarkerSet(object sender, DestinationMarkerEventArgs e)
         {
             ToggleHighlight(e.target, selectColor);
-            OscPointerTriggerReactor reactor = e.target.GetComponent<OscPointerTriggerReactor>();
-            if (reactor != null)
+            OscPointerController transmitter = e.target.GetComponent<OscPointerController>();
+            if (transmitter != null)
             {
-                reactor.DestinationMarkerSet(sender, e);
+                transmitter.DestinationMarkerSet(sender, e);
             }
         }
 
@@ -94,11 +94,11 @@
             }
         }
 
-        //protected virtual void DebugLogger(uint index, string action, Transform target, RaycastHit raycastHit, float distance, Vector3 tipPosition)
-        //{
-        //    string targetName = (target ? target.name : "<NO VALID TARGET>");
-        //    string colliderName = (raycastHit.collider ? raycastHit.collider.name : "<NO VALID COLLIDER>");
-        //    VRTK_Logger.Info("Controller on index '" + index + "' is " + action + " at a distance of " + distance + " on object named [" + targetName + "] on the collider named [" + colliderName + "] - the pointer tip position is/was: " + tipPosition);
-        //}
+        protected virtual void DebugLogger(uint index, string action, Transform target, RaycastHit raycastHit, float distance, Vector3 tipPosition)
+        {
+            string targetName = (target ? target.name : "<NO VALID TARGET>");
+            string colliderName = (raycastHit.collider ? raycastHit.collider.name : "<NO VALID COLLIDER>");
+            VRTK_Logger.Info("Controller on index '" + index + "' is " + action + " at a distance of " + distance + " on object named [" + targetName + "] on the collider named [" + colliderName + "] - the pointer tip position is/was: " + tipPosition);
+        }
     }
 }

@@ -3,7 +3,7 @@
     using UnityEngine;
     using VRTK;
 
-    public class OscTransformTransmitter : BaseOscTransmitter
+    public class OscTransformTransmitter : BaseOscController
     {
         [Header("OSC Transform Settings")]
         public bool sendLocalPosition;

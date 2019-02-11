@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3572389151900770502}
   m_Layer: 0
-  m_Name: SliderMatrix3x3
+  m_Name: OscSliderMatrix3x3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,12 +49,12 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (2)
+      value: OscSlider2
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7
+      value: 0.175
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -64,7 +64,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -106,10 +106,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6554217656412096002, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: controllerID
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
@@ -129,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (4)
+      value: OscSlider4
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -186,6 +206,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
 --- !u!4 &8462532831837586516 stripped
@@ -204,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (7)
+      value: OscSlider7
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -219,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.2
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -261,10 +301,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6554217656412096002, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: controllerID
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
@@ -284,12 +344,12 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider
+      value: OscSlider0
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: -0.175
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -299,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -340,6 +400,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
@@ -359,12 +439,12 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (6)
+      value: OscSlider6
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: -0.175
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -374,7 +454,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.2
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -416,10 +496,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6554217656412096002, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: controllerID
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
@@ -439,7 +539,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (1)
+      value: OscSlider1
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -454,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -496,10 +596,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6554217656412096002, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: controllerID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
@@ -519,12 +639,12 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (8)
+      value: OscSlider8
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7
+      value: 0.175
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -534,7 +654,7 @@ PrefabInstance:
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.2
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -576,6 +696,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
 --- !u!4 &160059522526238481 stripped
@@ -594,12 +734,12 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (5)
+      value: OscSlider5
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7
+      value: 0.175
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -651,10 +791,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6554217656412096002, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: controllerID
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}
@@ -674,12 +834,12 @@ PrefabInstance:
     - target: {fileID: 5927879494571005101, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_Name
-      value: OSCSlider (3)
+      value: OscSlider3
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: -0.175
       objectReference: {fileID: 0}
     - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
@@ -731,10 +891,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927879494571005100, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6554217656412096002, guid: 7771d92a9fc43436bbe1dd395b3aa019,
         type: 3}
       propertyPath: controllerID
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921847152943514249, guid: 7771d92a9fc43436bbe1dd395b3aa019,
+        type: 3}
+      propertyPath: maximumLength
+      value: 0.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7771d92a9fc43436bbe1dd395b3aa019, type: 3}

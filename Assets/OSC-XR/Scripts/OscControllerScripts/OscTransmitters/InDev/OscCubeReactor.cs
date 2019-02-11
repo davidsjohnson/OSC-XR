@@ -18,7 +18,6 @@
         private List<float> faceForwardChecks = new List<float>(new float[6]);
 
         private Vector3Int faceOrientations = new Vector3Int();
-        private Vector3Int newOrientations = new Vector3Int();
 
         protected override void Start()
         {

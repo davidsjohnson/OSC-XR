@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5630365950847159233}
   - component: {fileID: 6791596706414446599}
   - component: {fileID: 501007857}
-  - component: {fileID: 501007858}
+  - component: {fileID: 5706659701906045361}
   m_Layer: 0
   m_Name: OscGyro
   m_TagString: Untagged
@@ -188,6 +188,7 @@ MonoBehaviour:
   controllerID: 0
   receiverNames: []
   oscAddress: 
+  controlObject: {fileID: 0}
   velocityStep: 0.001
 --- !u!114 &4263376685851420533
 MonoBehaviour:
@@ -296,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &501007858
+--- !u!114 &5706659701906045361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -4,7 +4,7 @@
     using UnityEngine;
     using VRTK;
 
-    public class OscGyroTransmitter : BaseOscTransmitter
+    public class OscGyroController : BaseOscController
     {
         // Control Params
         public VRTK_InteractableObject controlObject = null;
@@ -17,11 +17,8 @@
 
         private Rigidbody rb;
 
-        private float equalityThresh = .0001f;
         Vector3 prevAngularVelocity = new Vector3();
-
         bool frozen = false;
-        bool grabbed = false;
 
         private void OnEnable()
         {

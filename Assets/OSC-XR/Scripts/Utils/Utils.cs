@@ -24,5 +24,11 @@
 
             return vec;
         }
+
+        //Custom Approximately function with modifiable epsilon
+        public static bool Approximately(float a, float b, float epsilon = .00001f)
+        {
+            return (a >= b - epsilon && a <= b + epsilon);
+        }
     }
 }
