@@ -16,22 +16,22 @@
 
         public virtual void DestinationMarkerEnter(object sender, DestinationMarkerEventArgs e)
         {
-            SendOSCMessage(string.Format("{0}/enter", oscAddress));
+            SendOscMessage(string.Format("{0}/enter", oscAddress));
         }
 
         public void DestinationMarkerHover(object sender, DestinationMarkerEventArgs e)
         {
-            SendOSCMessage(string.Format("{0}/hover", oscAddress));
+            SendOscMessage(string.Format("{0}/hover", oscAddress));
         }
 
         public virtual void DestinationMarkerExit(object sender, DestinationMarkerEventArgs e)
         {
-            SendOSCMessage(string.Format("{0}/exit", oscAddress));
+            SendOscMessage(string.Format("{0}/exit", oscAddress));
         }
 
         public virtual void DestinationMarkerSet(object sender, DestinationMarkerEventArgs e)
         {
-            SendOSCMessage(string.Format("{0}/selected", oscAddress));
+            SendOscMessage(string.Format("{0}/selected", oscAddress));
         }
 
         protected virtual void DebugLogger(uint index, string action, Transform target, RaycastHit raycastHit, float distance, Vector3 tipPosition)

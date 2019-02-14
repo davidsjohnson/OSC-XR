@@ -49,9 +49,9 @@
                 if (sendPressedReleased)
                 {
                     if (sendVelocity)
-                        SendOSCMessage(string.Format("{0}/pressed", oscAddress), Mathf.Min(rb.velocity.magnitude, 1));
+                        SendOscMessage(string.Format("{0}/pressed", oscAddress), Mathf.Min(rb.velocity.magnitude, 1));
                     else
-                        SendOSCMessage(string.Format("{0}/pressed", oscAddress));
+                        SendOscMessage(string.Format("{0}/pressed", oscAddress));
                 }
                 padPressed = true;
             }
@@ -60,9 +60,9 @@
                 if (sendPressedReleased)
                 {
                     if (sendVelocity)
-                        SendOSCMessage(string.Format("{0}/released", oscAddress), Mathf.Min(rb.velocity.magnitude, 1));
+                        SendOscMessage(string.Format("{0}/released", oscAddress), Mathf.Min(rb.velocity.magnitude, 1));
                     else
-                        SendOSCMessage(string.Format("{0}/released", oscAddress));
+                        SendOscMessage(string.Format("{0}/released", oscAddress));
                 }
                 padPressed = false;
             }

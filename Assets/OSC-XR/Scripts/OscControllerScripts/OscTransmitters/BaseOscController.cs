@@ -25,7 +25,7 @@
             set { oscAddress = value; }
         }
 
-        public void SendOSCMessage(string address, params object[] values)
+        public void SendOscMessage(string address, params object[] values)
         {
             // Add controller ID to params
             object[] tmp = new object[values.Length + 1];

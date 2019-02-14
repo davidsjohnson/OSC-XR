@@ -63,7 +63,7 @@
             Vector3 steppedVelocity = Utils.GetStepValue(localAngularVelocity, velocityStep);
             if (!VRTK_SharedMethods.Vector3ShallowCompare(prevAngularVelocity, steppedVelocity, velocityStep))
             {
-                SendOSCMessage(string.Format("{0}/velocity", OscAddress),
+                SendOscMessage(string.Format("{0}/velocity", OscAddress),
                                                steppedVelocity.x, steppedVelocity.y, steppedVelocity.z);
             }
             prevAngularVelocity = steppedVelocity;
@@ -75,25 +75,25 @@
             {
                 rb.constraints = RigidbodyConstraints.FreezeAll;
                 frozen = true;
-                SendOSCMessage(string.Format("{0}/frozen", OscAddress));
+                SendOscMessage(string.Format("{0}/frozen", OscAddress));
             }
         }
 
         private void ObjectGrabbed(object sender, InteractableObjectEventArgs e)
         {
-            SendOSCMessage(string.Format("{0}/grabbed", OscAddress));
+            SendOscMessage(string.Format("{0}/grabbed", OscAddress));
             if (frozen)
             {
                 rb.constraints = RigidbodyConstraints.None;
                 frozen = false;
-                SendOSCMessage(string.Format("{0}/unfrozen", OscAddress));
+                SendOscMessage(string.Format("{0}/unfrozen", OscAddress));
             }
             
         }
 
         private void ObjectUngrabbed(object sender, InteractableObjectEventArgs e)
         {
-            SendOSCMessage(string.Format("{0}/ungrabbed", OscAddress));
+            SendOscMessage(string.Format("{0}/ungrabbed", OscAddress));
         }
     }
 }

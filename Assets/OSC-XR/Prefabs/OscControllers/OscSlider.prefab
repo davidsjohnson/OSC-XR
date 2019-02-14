@@ -209,7 +209,7 @@ MonoBehaviour:
   equalityFidelity: 0.001
   maximumLength: 0.9
   minMaxThreshold: 0.01
-  positionTarget: 0.5
+  positionTarget: 0
   restingPosition: 0
   forceRestingPositionThreshold: 0
   stepValueRange:
@@ -218,11 +218,11 @@ MonoBehaviour:
   stepSize: 0.1
   useStepAsValue: 1
   snapToStep: 0
-  snapForce: 10
-  trackingSpeed: 25
-  precisionGrab: 0
+  snapForce: 50
+  trackingSpeed: 100
+  precisionGrab: 1
   detachDistance: 3
-  releaseFriction: 10
+  releaseFriction: 100
   onlyInteractWith: []
 --- !u!1 &5602630296679811900
 GameObject:

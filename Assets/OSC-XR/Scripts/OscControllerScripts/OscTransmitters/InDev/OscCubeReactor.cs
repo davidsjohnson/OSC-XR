@@ -24,7 +24,7 @@
             base.Start();
 
             faceOrientations = FindFaceOrientation();
-            cubeTransmitter.SendOSCMessage(string.Format("{0}/faceup", cubeTransmitter.oscAddress), faceOrientations.y);
+            cubeTransmitter.SendOscMessage(string.Format("{0}/faceup", cubeTransmitter.oscAddress), faceOrientations.y);
         }
 
         // Update is called once per frame
@@ -38,7 +38,7 @@
                 if (newOrientations.y != faceOrientations.y)
                 {
                     faceOrientations = newOrientations;
-                    cubeTransmitter.SendOSCMessage(string.Format("{0}/faceup", cubeTransmitter.oscAddress), faceOrientations.y);
+                    cubeTransmitter.SendOscMessage(string.Format("{0}/faceup", cubeTransmitter.oscAddress), faceOrientations.y);
                 }
                 
                 wasMoving = false;

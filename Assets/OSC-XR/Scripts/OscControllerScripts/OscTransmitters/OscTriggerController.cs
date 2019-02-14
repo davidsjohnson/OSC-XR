@@ -44,7 +44,7 @@
                     args.Add(localPos.y);
                     args.Add(localPos.z);
                 }
-                SendOSCMessage(string.Format("{0}/enter", oscAddress), args.ToArray());
+                SendOscMessage(string.Format("{0}/enter", oscAddress), args.ToArray());
             }
         }
 
@@ -60,7 +60,7 @@
                     args.Add(localPos.y);
                     args.Add(localPos.z);
                 }
-                SendOSCMessage(string.Format("{0}/stay", oscAddress), args.ToArray());
+                SendOscMessage(string.Format("{0}/stay", oscAddress), args.ToArray());
             }
         }
 
@@ -76,7 +76,7 @@
                     args.Add(localPos.y);
                     args.Add(localPos.z);
                 }
-                SendOSCMessage(string.Format("{0}/exit", oscAddress), args.ToArray());
+                SendOscMessage(string.Format("{0}/exit", oscAddress), args.ToArray());
             }
         }
 

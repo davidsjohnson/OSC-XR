@@ -42,27 +42,27 @@
         protected virtual void SendTransformData()
         {
             if (transmitter.sendLocalPosition && localPosChanged)
-                transmitter.SendOSCMessage(string.Format("{0}/position/local", transmitter.oscAddress),
+                transmitter.SendOscMessage(string.Format("{0}/position/local", transmitter.oscAddress),
                     positionLocal.x, positionLocal.y, positionLocal.z);
 
             if (transmitter.sendWorldPosition && worldPosChanged)
-                transmitter.SendOSCMessage(string.Format("{0}/position/world", transmitter.oscAddress),
+                transmitter.SendOscMessage(string.Format("{0}/position/world", transmitter.oscAddress),
                     positionWorld.x, positionWorld.y, positionWorld.z);
 
             if (transmitter.sendLocalScale && localScaleChanged)
-                transmitter.SendOSCMessage(string.Format("{0}/scale/local", transmitter.oscAddress),
+                transmitter.SendOscMessage(string.Format("{0}/scale/local", transmitter.oscAddress),
                     scaleLocal.x, scaleLocal.y, scaleLocal.z);
 
             if (transmitter.sendWorldScale && worldScaleChanged)
-                transmitter.SendOSCMessage(string.Format("{0}/scale/world", transmitter.oscAddress),
+                transmitter.SendOscMessage(string.Format("{0}/scale/world", transmitter.oscAddress),
                     scaleWorld.x, scaleWorld.y, scaleWorld.z);
 
             if (transmitter.sendLocalRotation && localRotationChanged)
-                transmitter.SendOSCMessage(string.Format("{0}/rotation/local", transmitter.oscAddress),
+                transmitter.SendOscMessage(string.Format("{0}/rotation/local", transmitter.oscAddress),
                     rotationLocal.x, rotationLocal.y, rotationLocal.z);
 
             if (transmitter.sendWorldRotation && worldRotationChanged)
-                transmitter.SendOSCMessage(string.Format("{0}/rotation/world", transmitter.oscAddress),
+                transmitter.SendOscMessage(string.Format("{0}/rotation/world", transmitter.oscAddress),
                     rotationWorld.x, rotationWorld.y, rotationWorld.z);
         }
 

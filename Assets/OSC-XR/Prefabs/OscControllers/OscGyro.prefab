@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 6553099835053316816}
   - component: {fileID: 2822722672478886873}
   - component: {fileID: 8018973662293608238}
-  - component: {fileID: 4263376685851420533}
   - component: {fileID: 8701479377678986570}
   - component: {fileID: 5630365950847159233}
   - component: {fileID: 6791596706414446599}
@@ -188,21 +187,8 @@ MonoBehaviour:
   controllerID: 0
   receiverNames: []
   oscAddress: 
-  controlObject: {fileID: 0}
+  controlObject: {fileID: 8701479377678986570}
   velocityStep: 0.001
---- !u!114 &4263376685851420533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816053864117244256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3ab04b00b0e5fb48923c487b1a7292e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gyroTransmitter: {fileID: 8018973662293608238}
 --- !u!114 &8701479377678986570
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@
     using UnityEngine;
     using VRTK;
 
-    public class OscGrid3dController : BaseOscController
+    public class OscGrid3dControllerd : BaseOscController
     {
         [Header("Controller Settings")]
 
@@ -47,7 +47,7 @@
             CalcOSCValues();
             if (!VRTK_SharedMethods.Vector3ShallowCompare(prevStepValues, steppedOscValues, equalityFidelity))
             {
-                SendOSCMessage(string.Format("{0}/values", oscAddress), steppedOscValues.x, steppedOscValues.y, steppedOscValues.z);
+                SendOscMessage(string.Format("{0}/values", oscAddress), steppedOscValues.x, steppedOscValues.y, steppedOscValues.z);
             }
             prevStepValues = steppedOscValues;
         }

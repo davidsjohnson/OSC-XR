@@ -59,7 +59,7 @@
         protected virtual void ValueChanged(object sender, ControllableEventArgs e)
         {
             currentValue = e.value;
-            SendOSCMessage(string.Format("{0}/value", oscAddress), currentValue);
+            SendOscMessage(string.Format("{0}/value", oscAddress), currentValue);
 
             // Update Progress Slider
             sliderImage.fillAmount = e.normalizedValue;
