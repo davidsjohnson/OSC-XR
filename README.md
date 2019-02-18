@@ -27,9 +27,9 @@ Adding OSC controller prefabs to a Unity scene is the quickest way to get starte
 
 - `/gyro/values 1 0.90 0.01 0.55` - ID, Angular Velocity x, y, z
   
-See the Prefabs Directory README for full controller details
+See the [OSC-XR Prefabs](Assets/OSC-XR/Prefabs) Directory README for full controller details
 
 ## OSC-XR Scripting Interface
 OSC-XR scripting allows developers to quickly add OSC capabilities to any Unity `GameObject` by attaching any of the readily available controller scripts to the object.
 
-See the Prefabs Directory README for full controller details
+See the [OSC-XR Scripts](Assets/OSC-XR/Scripts) directory README for full controller details
