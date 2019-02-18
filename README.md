@@ -21,6 +21,7 @@ Adding OSC controller prefabs to a Unity scene is the quickest way to get starte
 #### OSC Pad
 
 > `/pad/pressed 1 1.5`
+
 > `/pad/released 1 1.5`
 
 #### OSC Gyro
