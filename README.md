@@ -16,17 +16,17 @@ Adding OSC controller prefabs to a Unity scene is the quickest way to get starte
 
 #### OSC Slider
 
-- `/slider/value 1 0.65`
+- `/slider/value 1 0.65` - ID, Range Value
 
 #### OSC Pad
 
-- `/pad/pressed 1 1.5`
-- `/pad/released 1 1.5`
+- `/pad/pressed 1 1.5` - ID, Velocity
+- `/pad/released 1 1.5` - ID, Velocity
 
 #### OSC Gyro
 
-- `/gyro/values 1 0.90 0.01 0.55`
-
+- `/gyro/values 1 0.90 0.01 0.55` - ID, Angular Velocity X, Y, Z
+  
 See the Prefabs Directory README for full controller details
 
 ## OSC-XR Scripting Interface
