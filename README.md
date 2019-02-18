@@ -25,7 +25,7 @@ Adding OSC controller prefabs to a Unity scene is the quickest way to get starte
 
 #### OSC Gyro
 
-- `/gyro/values 1 0.90 0.01 0.55` - ID, Angular Velocity X, Y, Z
+- `/gyro/values 1 0.90 0.01 0.55` - ID, Angular Velocity x, y, z
   
 See the Prefabs Directory README for full controller details
 
