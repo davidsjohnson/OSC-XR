@@ -111,7 +111,6 @@ GameObject:
   - component: {fileID: 6358148426834077701}
   - component: {fileID: 6228330837330631111}
   - component: {fileID: 236331784800909740}
-  - component: {fileID: 3667543449677620103}
   - component: {fileID: 7921847152943514249}
   m_Layer: 0
   m_Name: Handle
@@ -192,20 +191,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3667543449677620103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4075741541699609832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dbc7934edc7e47af8d4985eea295559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oscTransmitObject: {fileID: 6554217656412096002}
-  sliderImage: {fileID: 7470189201453464847}
 --- !u!114 &7921847152943514249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +209,7 @@ MonoBehaviour:
   equalityFidelity: 0.001
   maximumLength: 0.9
   minMaxThreshold: 0.01
-  positionTarget: 0.5
+  positionTarget: 0
   restingPosition: 0
   forceRestingPositionThreshold: 0
   stepValueRange:
@@ -233,11 +218,11 @@ MonoBehaviour:
   stepSize: 0.1
   useStepAsValue: 1
   snapToStep: 0
-  snapForce: 10
-  trackingSpeed: 25
-  precisionGrab: 0
+  snapForce: 50
+  trackingSpeed: 100
+  precisionGrab: 1
   detachDistance: 3
-  releaseFriction: 10
+  releaseFriction: 100
   onlyInteractWith: []
 --- !u!1 &5602630296679811900
 GameObject:
@@ -324,7 +309,7 @@ GameObject:
   - component: {fileID: 5927879494571005100}
   - component: {fileID: 6554217656412096002}
   m_Layer: 0
-  m_Name: OSCSlider
+  m_Name: OscSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,13 +346,13 @@ MonoBehaviour:
   controllerID: 0
   receiverNames: []
   oscAddress: 
-  sendContinously: 0
   sliderRange:
     minimum: 0
     maximum: 1
   stepSize: 0.01
   defaultPosition: 0
-  controllable: {fileID: 7921847152943514249}
+  controlObject: {fileID: 7921847152943514249}
+  sliderImage: {fileID: 7470189201453464847}
 --- !u!1 &5927879494849062352
 GameObject:
   m_ObjectHideFlags: 0

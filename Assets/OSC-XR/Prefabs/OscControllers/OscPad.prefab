@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5006167396321107269}
   - component: {fileID: 7923023298035983258}
   m_Layer: 0
-  m_Name: OSCPad
+  m_Name: OscPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,11 +126,10 @@ MonoBehaviour:
   controllerID: 0
   receiverNames: []
   oscAddress: 
-  sendContinously: 0
   sendPressedReleased: 1
   triggerThreshold: 0.5
   sendVelocity: 1
-  button: {fileID: 7254761868315021583}
+  controlObject: {fileID: 7254761868315021583}
 --- !u!1 &5006167397104475443
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +141,6 @@ GameObject:
   - component: {fileID: 5006167397104475440}
   - component: {fileID: 5006167397104475439}
   - component: {fileID: 5006167397104475438}
-  - component: {fileID: 6846438678803990653}
   - component: {fileID: 7254761868315021583}
   - component: {fileID: 1106925930794654932}
   m_Layer: 0
@@ -212,19 +210,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6846438678803990653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5006167397104475443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84095fc6bf8601d44ae7d96794dc7077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oscTransmitObject: {fileID: 7923023298035983258}
 --- !u!114 &7254761868315021583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +235,7 @@ MonoBehaviour:
   restingPosition: 0
   restingPositionThreshold: 0.01
   positionTarget: 0
-  targetForce: 100
+  targetForce: 150
   parent: {fileID: 5006167396321107269}
 --- !u!54 &1106925930794654932
 Rigidbody:

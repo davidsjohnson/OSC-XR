@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 3358234222241361548}
   - component: {fileID: 7978722432918689393}
   m_Layer: 0
-  m_Name: OSCSpace
+  m_Name: Osc3DGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,10 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f11fc1f9f495c74b8f87d79b3443df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerName: 
+  controllerID: 0
   receiverNames: []
   oscAddress: 
-  sendContinously: 0
   xValueRange:
     minimum: 0
     maximum: 1
@@ -168,6 +167,7 @@ MonoBehaviour:
     minimum: 0
     maximum: 1
   zStep: 0.01
+  controlObject: {fileID: 6938423953754153686}
 --- !u!1 &3358234222261333973
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 3358234222261333969}
   - component: {fileID: 3358234222261333968}
   - component: {fileID: 3358234222261333975}
-  - component: {fileID: 4477746089858660170}
   - component: {fileID: 6938423953754153686}
   - component: {fileID: 5933187698810697480}
   - component: {fileID: 5151662044054309701}
@@ -264,19 +263,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4477746089858660170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3358234222261333973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2f5ee2d2b723804dbdd6cd749518e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spaceController: {fileID: 7978722432918689393}
 --- !u!114 &6938423953754153686
 MonoBehaviour:
   m_ObjectHideFlags: 0
