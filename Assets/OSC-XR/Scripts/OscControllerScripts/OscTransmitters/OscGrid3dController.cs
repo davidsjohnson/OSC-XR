@@ -3,7 +3,7 @@
     using UnityEngine;
     using VRTK;
 
-    public class OscGrid3dControllerd : BaseOscController
+    public class OscGrid3dController : BaseOscController
     {
         [Header("Controller Settings")]
 

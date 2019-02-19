@@ -129,7 +129,6 @@ MonoBehaviour:
   sendPressedReleased: 1
   triggerThreshold: 0.5
   sendVelocity: 1
-  button: {fileID: 7254761868315021583}
   controlObject: {fileID: 7254761868315021583}
 --- !u!1 &5006167397104475443
 GameObject:
@@ -236,7 +235,7 @@ MonoBehaviour:
   restingPosition: 0
   restingPositionThreshold: 0.01
   positionTarget: 0
-  targetForce: 100
+  targetForce: 150
   parent: {fileID: 5006167396321107269}
 --- !u!54 &1106925930794654932
 Rigidbody:
