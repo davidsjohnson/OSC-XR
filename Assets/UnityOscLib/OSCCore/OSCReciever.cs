@@ -19,15 +19,15 @@
 // 	  IN THE SOFTWARE.
 //
 
-
-using System.Collections.Generic;
-using UnityEngine;
+namespace UnityOscLib
+{
+    using System.Collections.Generic;
+    using UnityEngine;
 #if UNITY_EDITOR
-using UnityEditor;
+    using UnityEditor;
 #endif
 
-namespace UnityOSC
-{
+
     public class OSCReciever
     {
         Queue<OSCMessage> _queue = new Queue<OSCMessage>();

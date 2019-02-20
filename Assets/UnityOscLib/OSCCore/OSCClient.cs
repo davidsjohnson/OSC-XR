@@ -18,17 +18,17 @@
 // 	  IN THE SOFTWARE.
 //
 
-using System;
-using System.Net;
-using System.Net.Sockets;
-
-namespace UnityOSC
+namespace UnityOscLib
 {
-	/// <summary>
-	/// Dispatches OSC messages to the specified destination address and port.
-	/// </summary>
-	
-	public class OSCClient
+    using System;
+    using System.Net;
+    using System.Net.Sockets;
+
+    /// <summary>
+    /// Dispatches OSC messages to the specified destination address and port.
+    /// </summary>
+
+    public class OSCClient
 	{
 		#region Constructors
 		public OSCClient (IPAddress address, int port)

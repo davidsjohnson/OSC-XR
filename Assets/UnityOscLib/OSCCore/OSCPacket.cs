@@ -19,17 +19,20 @@
 // 	  IN THE SOFTWARE.
 //
 
-using System;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System.Text;
 
-namespace UnityOSC
+
+namespace UnityOscLib
 {
-	/// <summary>
-	/// Models a OSC Packet over an OSC stream.
-	/// </summary>
-	abstract public class OSCPacket
+
+    using System;
+    using System.Diagnostics;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Models a OSC Packet over an OSC stream.
+    /// </summary>
+    abstract public class OSCPacket
 	{
 		#region Member Variables
 		protected List<object> _data;

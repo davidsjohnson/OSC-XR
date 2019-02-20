@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityOscLib;
 
     public class BaseOscController : MonoBehaviour
     {
@@ -36,12 +37,12 @@
             {
                 foreach (var cname in receiverNames)
                 {
-                    OSCTransmitManager.Transmitter.SendOscMessage(cname, address, tmp); // include controller ID for every message
+                    OscTransmitManager.Instance.SendOscMessage(cname, address, tmp); // include controller ID for every message
                 }
             }
             else
             {
-                OSCTransmitManager.Transmitter.SendOscMessageAll(address, tmp); // include controller ID for every message
+                OscTransmitManager.Instance.SendOscMessageAll(address, tmp); // include controller ID for every message
             }
         }
     }

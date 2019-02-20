@@ -2,7 +2,7 @@
 {
     using UnityEngine;
     using UnityEngine.UI;
-    using UnityOSC;
+    using UnityOscLib;
 
     public class OscValueLabelReceiver : MonoBehaviour
     {
