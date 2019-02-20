@@ -24,8 +24,10 @@
         private bool padPressed;
         private Rigidbody rb;
 
-        public virtual void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             // Initialize Controller members
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/pad") : oscAddress;     // Set up name and address
             controlObject = controlObject ?? GetComponent<VRTK_BaseControllable>();                 // Set up control object

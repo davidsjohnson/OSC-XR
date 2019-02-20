@@ -29,8 +29,10 @@
         public Image sliderImage;
         private float currentValue = 0;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/slider") : oscAddress;      // Set up name and address
             controlObject = controlObject ?? GetComponent<VRTK_BaseControllable>();                     // Set up Control Object
 

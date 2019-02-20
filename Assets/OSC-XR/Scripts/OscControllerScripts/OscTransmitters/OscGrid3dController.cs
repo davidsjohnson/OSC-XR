@@ -30,8 +30,10 @@
 
         private readonly Limits2D constrainLimit = new Limits2D(-0.5f, 0.5f);
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/grid3d") : oscAddress;      // Set up name and address
             controlObject = controlObject ?? GetComponent<VRTK_InteractableObject>();                   // Set up Control Object
         }

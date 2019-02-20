@@ -26,6 +26,11 @@
             set { oscAddress = value; }
         }
 
+        protected virtual void OnEnable()
+        {
+            OscTransmitManager.Instance.OnSendOsc += ControlRateUpdate;
+        }
+
         public void SendOscMessage(string address, params object[] values)
         {
             // Add controller ID to params
@@ -45,5 +50,7 @@
                 OscTransmitManager.Instance.SendOscMessageAll(address, tmp); // include controller ID for every message
             }
         }
+
+        protected virtual void ControlRateUpdate() { }
     }
 }

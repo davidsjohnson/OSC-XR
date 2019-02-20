@@ -20,8 +20,10 @@
         Vector3 prevAngularVelocity = new Vector3();
         bool frozen = false;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             OscAddress = string.IsNullOrEmpty(OscAddress) ? "/gyro" : OscAddress;
             controlObject = controlObject ?? GetComponent<VRTK_InteractableObject>();
         }

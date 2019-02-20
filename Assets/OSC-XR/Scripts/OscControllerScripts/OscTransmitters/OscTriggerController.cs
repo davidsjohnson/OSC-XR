@@ -25,8 +25,10 @@
         [Header("Unity Game Object Controller")]
         public GameObject controlObject = null;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/trigger") : oscAddress;     // Set up name and address
             controlObject = controlObject ?? gameObject;                                                // Set up Control Object
         }
