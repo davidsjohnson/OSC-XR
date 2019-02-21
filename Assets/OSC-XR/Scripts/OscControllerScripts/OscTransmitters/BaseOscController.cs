@@ -26,8 +26,20 @@
             set { oscAddress = value; }
         }
 
+        [Header("Controllable GameObject")]
+        public GameObject controlObject;
+
         protected virtual void OnEnable()
+        { 
+        }
+
+        protected virtual void Start()
         {
+            // Check if null and update with current object if so (collesce operator not working??)
+            if (controlObject == null)
+            {
+                controlObject = gameObject;
+            }
             OscTransmitManager.Instance.OnSendOsc += ControlRateUpdate;
         }
 

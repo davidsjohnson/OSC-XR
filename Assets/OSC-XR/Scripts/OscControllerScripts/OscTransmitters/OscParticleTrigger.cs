@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
+    [RequireComponent(typeof(ParticleSystem))]
     public class OscParticleTrigger : BaseOscController
     {
         [Header("On Particle Enter Messages")]
@@ -15,10 +16,6 @@
         public bool sendTriggerExit = true;
 
         public int maxParticles = 15;
-
-        //Reactor Interactable
-        [Header("Unity Game Object Controller")]
-        public GameObject controlObject = null;
 
         private struct ParticleStruct
         {

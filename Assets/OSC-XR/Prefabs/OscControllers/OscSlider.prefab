@@ -346,12 +346,12 @@ MonoBehaviour:
   controllerID: 0
   receiverNames: []
   oscAddress: 
+  controlObject: {fileID: 4075741541699609832}
   sliderRange:
     minimum: 0
     maximum: 1
   stepSize: 0.01
   defaultPosition: 0
-  controlObject: {fileID: 7921847152943514249}
   sliderImage: {fileID: 7470189201453464847}
 --- !u!1 &5927879494849062352
 GameObject:

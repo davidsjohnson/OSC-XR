@@ -21,10 +21,6 @@
         [Header("Colliders to Ignore")]
         public List<Collider> ignoreColliders;
 
-        //Reactor Interactable
-        [Header("Unity Game Object Controller")]
-        public GameObject controlObject = null;
-
         protected override void OnEnable()
         {
             base.OnEnable();
