@@ -122,7 +122,7 @@
                 message.Append(msgvalue);
             }
 
-            Debug.Log(string.Format("Sending OSC to Receiver {0}: {2}", name, address, message));
+            //Debug.Log(string.Format("Sending OSC to Receiver {0}: {2}", name, address, message));
 
             oscReceiversDict[name].Send(message);
         }
