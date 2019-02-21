@@ -2,14 +2,14 @@
 {
     using UnityEngine;
     using UnityEngine.UI;
-    using UnityOSC;
+    using UnityOscLib;
 
     public class OscSampleReceiver : MonoBehaviour
     {
         private Text text;
         private void Start()
         {
-            OscReceiverManager.ReceiverManager.RegisterOscAddress("/tnseprocessed/done", OscReceivedHandler);
+            OscReceiverManager.Instance.RegisterOscAddress("/tnseprocessed/done", OscReceivedHandler);
             text = GetComponent<Text>();
             text.text = "Press to Run...";
         }

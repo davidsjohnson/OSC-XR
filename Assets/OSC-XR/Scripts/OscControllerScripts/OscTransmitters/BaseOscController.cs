@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityOscLib;
 
     public class BaseOscController : MonoBehaviour
     {
@@ -25,6 +26,23 @@
             set { oscAddress = value; }
         }
 
+        [Header("Controllable GameObject")]
+        public GameObject controlObject;
+
+        protected virtual void OnEnable()
+        { 
+        }
+
+        protected virtual void Start()
+        {
+            // Check if null and update with current object if so (collesce operator not working??)
+            if (controlObject == null)
+            {
+                controlObject = gameObject;
+            }
+            OscTransmitManager.Instance.OnSendOsc += ControlRateUpdate;
+        }
+
         public void SendOscMessage(string address, params object[] values)
         {
             // Add controller ID to params
@@ -36,13 +54,15 @@
             {
                 foreach (var cname in receiverNames)
                 {
-                    OSCTransmitManager.Transmitter.SendOscMessage(cname, address, tmp); // include controller ID for every message
+                    OscTransmitManager.Instance.SendOscMessage(cname, address, tmp); // include controller ID for every message
                 }
             }
             else
             {
-                OSCTransmitManager.Transmitter.SendOscMessageAll(address, tmp); // include controller ID for every message
+                OscTransmitManager.Instance.SendOscMessageAll(address, tmp); // include controller ID for every message
             }
         }
+
+        protected virtual void ControlRateUpdate() { }
     }
 }

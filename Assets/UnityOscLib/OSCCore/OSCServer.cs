@@ -19,15 +19,15 @@
 // 	  IN THE SOFTWARE.
 //
 
-using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Threading;
-using System.Collections.Generic;
-using UnityEngine;
 
-namespace UnityOSC
+namespace UnityOscLib
 {
+    using System;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Threading;
+    using UnityEngine;
+
     public delegate void PacketReceivedEventHandler(OSCServer sender, OSCPacket packet);
 
 	/// <summary>

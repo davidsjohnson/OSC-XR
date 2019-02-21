@@ -13,23 +13,22 @@
         [Tooltip("Send velocity information with Trigger message")]
         public bool sendVelocity;
 
-        //Reactor Interactable
-        [Header("VRTK Controllable Object")]
-        public VRTK_BaseControllable controlObject = null;
-
-
         // Reactor Private Members
         private float prevValue = 0f;
         private float currValue = 0f;
         private bool padPressed;
         private Rigidbody rb;
 
-        public virtual void OnEnable()
+        private VRTK_BaseControllable controllable;
+
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             // Initialize Controller members
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/pad") : oscAddress;     // Set up name and address
-            controlObject = controlObject ?? GetComponent<VRTK_BaseControllable>();                 // Set up control object
             rb = controlObject.GetComponent<Rigidbody>();                                           // Get Rigidbody from control object
+            controllable = controlObject.GetComponent<VRTK_BaseControllable>();
 
             padPressed = false;                                                                     // Pad is not pressed by default
         }
@@ -38,7 +37,7 @@
         {
             // Store Values to calculate simple velocity
             prevValue = currValue;
-            currValue = controlObject.GetNormalizedValue();
+            currValue = controllable.GetNormalizedValue();
             currValue = Utils.Approximately(0, currValue) ? 0f : // if close to 0 set to zero      (Should probably used Stepped Function instead)
                         Utils.Approximately(1, currValue) ? 1f : // if close to 1 set to one
                         Mathf.Round(currValue * 1000) / 1000f;   // otherwise round value

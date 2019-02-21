@@ -19,14 +19,14 @@
 // 	  IN THE SOFTWARE.
 //
 
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
 
-namespace UnityOSC
+namespace UnityOscLib
 {
-	public sealed class OSCMessage : OSCPacket
+
+    using System;
+    using System.Collections.Generic;
+
+    public sealed class OSCMessage : OSCPacket
 	{
 		#region Constructors
 		public OSCMessage (string address)

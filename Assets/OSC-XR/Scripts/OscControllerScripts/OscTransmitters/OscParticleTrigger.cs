@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
+    [RequireComponent(typeof(ParticleSystem))]
     public class OscParticleTrigger : BaseOscController
     {
         [Header("On Particle Enter Messages")]
@@ -14,14 +15,7 @@
         [Header("On Particle Exit Messages")]
         public bool sendTriggerExit = true;
 
-        [Header("Include Position with Messages")]
-        public bool includeLocalPosition = true;
-
         public int maxParticles = 15;
-
-        //Reactor Interactable
-        [Header("Unity Game Object Controller")]
-        public GameObject controlObject = null;
 
         private struct ParticleStruct
         {
@@ -37,8 +31,10 @@
         Dictionary<uint, ParticleStruct> tracked = new Dictionary<uint, ParticleStruct>();
         List<int> availableIDs;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/particleTrigger") : oscAddress;     // Set up name and address
             controlObject = controlObject ?? gameObject;                                                        // Set up Control Object
 
@@ -46,11 +42,26 @@
             availableIDs = new List<int>(new int[maxParticles]);
         }
 
+        protected override void ControlRateUpdate()
+        {
+            base.ControlRateUpdate();
+
+            // Send position of tracked particles
+            foreach (var kv in tracked)
+            {
+                Vector3 localPos = kv.Value.p.position;
+                SendOscMessage(string.Format("{0}/stay", OscAddress), kv.Value.id, localPos.x, localPos.y, localPos.z);
+                //Debug.Log(string.Format("Stay ID: {0} - Pos: {1}", kv.Value.id, localPos));
+            }
+
+        }
+
         private void OnParticleTrigger()
         {
             int numEnter = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, pEnter);
             int numExit = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Exit, pExit);
 
+            // Remove particles as they exit the object
             foreach (var p in pExit)
             {
                 if (tracked.ContainsKey(p.randomSeed)) { 
@@ -62,16 +73,8 @@
                     tracked.Remove(p.randomSeed);                        // remove particle 
                 }
             }
-
-
-            // Send this in Control Rate Loop
-            foreach (var kv in tracked)
-            {
-                Vector3 localPos = kv.Value.p.position;
-                SendOscMessage(string.Format("{0}/stay", OscAddress), kv.Value.id, localPos.x, localPos.y, localPos.z);
-                //Debug.Log(string.Format("Stay ID: {0} - Pos: {1}", kv.Value.id, localPos));
-            }
-
+            
+            // Add particles as they enter the object
             foreach (var p in pEnter)
             {
                 Debug.Log("Entering P: " + p.randomSeed);

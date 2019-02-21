@@ -129,7 +129,7 @@ MonoBehaviour:
   sendPressedReleased: 1
   triggerThreshold: 0.5
   sendVelocity: 1
-  controlObject: {fileID: 7254761868315021583}
+  controlObject: {fileID: 5006167397104475443}
 --- !u!1 &5006167397104475443
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,10 +18,6 @@
         public Limits2D zValueRange = new Limits2D(0f, 1.0f);
         public float zStep = 0.01f;
 
-        //Reactor Interactable
-        [Header("VRTK Interactable Control Object")]
-        public VRTK_InteractableObject controlObject = null;
-
         // Reactor Params
         private float equalityFidelity = 0.001f;
 
@@ -30,14 +26,17 @@
 
         private readonly Limits2D constrainLimit = new Limits2D(-0.5f, 0.5f);
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/grid3d") : oscAddress;      // Set up name and address
-            controlObject = controlObject ?? GetComponent<VRTK_InteractableObject>();                   // Set up Control Object
+            controlObject = controlObject ?? gameObject;                                               // Set up Control Object
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             CalcOSCValues();
             prevStepValues = steppedOscValues;
         }

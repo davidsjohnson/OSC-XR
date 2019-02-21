@@ -18,19 +18,17 @@
 // 	  IN THE SOFTWARE.
 //
 
-using System;
-using System.Net;
-using System.Text;
-using System.Collections.Generic;
-using System.Diagnostics;
 
-namespace UnityOSC
+namespace UnityOscLib
 {
-	/// <summary>
-	/// Models a Bundle of the OSC protocol.
-	/// Derived from a OSC Packet over a OSC Stream.
-	/// </summary>
-	public sealed class OSCBundle : OSCPacket
+    using System;
+    using System.Diagnostics;
+
+    /// <summary>
+    /// Models a Bundle of the OSC protocol.
+    /// Derived from a OSC Packet over a OSC Stream.
+    /// </summary>
+    public sealed class OSCBundle : OSCPacket
 	{
 		
 		#region Constructors

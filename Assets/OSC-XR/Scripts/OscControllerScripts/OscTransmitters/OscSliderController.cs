@@ -22,38 +22,41 @@
         [Tooltip("The value that the slider should start at")]
         public float defaultPosition = 0.0f;
 
-        [Header("VRTK Controllable Object")]
-        public VRTK_BaseControllable controlObject;
+        private VRTK_BaseControllable controllable;
 
         // Reactor Private Members
         public Image sliderImage;
         private float currentValue = 0;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             oscAddress = string.IsNullOrEmpty(oscAddress) ? string.Format("/slider") : oscAddress;      // Set up name and address
-            controlObject = controlObject ?? GetComponent<VRTK_BaseControllable>();                     // Set up Control Object
+            controlObject = controlObject ?? gameObject;                                                // Set up Control Object
+            controllable = controlObject.GetComponent<VRTK_BaseControllable>();
 
             ManageListeners(true);
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
 
             //Update VRTK Slider Settings 
-            controlObject.GetComponent<VRTK_ArtificialSlider>().stepValueRange = sliderRange;
-            controlObject.GetComponent<VRTK_ArtificialSlider>().stepSize = stepSize;
+            controllable.GetComponent<VRTK_ArtificialSlider>().stepValueRange = sliderRange;
+            controllable.GetComponent<VRTK_ArtificialSlider>().stepSize = stepSize;
 
             float startPos = Utils.MapValue(defaultPosition, sliderRange, new Limits2D(0f, 1f));
-            controlObject.GetComponent<VRTK_ArtificialSlider>().SetPositionTarget(startPos, 100f);
+            controllable.GetComponent<VRTK_ArtificialSlider>().SetPositionTarget(startPos, 100f);
         }
 
         protected virtual void ManageListeners(bool state)
         {
             if (state)
-            { controlObject.ValueChanged += ValueChanged; }
+            { controllable.ValueChanged += ValueChanged; }
             else
-            { controlObject.ValueChanged -= ValueChanged; }
+            { controllable.ValueChanged -= ValueChanged; }
         }
 
         protected virtual void ValueChanged(object sender, ControllableEventArgs e)

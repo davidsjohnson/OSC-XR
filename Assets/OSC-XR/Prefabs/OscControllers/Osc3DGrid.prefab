@@ -155,6 +155,7 @@ MonoBehaviour:
   controllerID: 0
   receiverNames: []
   oscAddress: 
+  controlObject: {fileID: 3358234222261333973}
   xValueRange:
     minimum: 0
     maximum: 1
@@ -167,7 +168,6 @@ MonoBehaviour:
     minimum: 0
     maximum: 1
   zStep: 0.01
-  controlObject: {fileID: 6938423953754153686}
 --- !u!1 &3358234222261333973
 GameObject:
   m_ObjectHideFlags: 0
