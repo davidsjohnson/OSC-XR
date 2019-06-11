@@ -6,7 +6,7 @@ OSC-XR is a toolkit for rapidly prototyping immersive musical environments in XR
 
 If using OSC-XR for research please cite:
 
-- D. Johnson, D. Damian and G. Tzanetakis. [OSC-XR: A Toolkit for Extended Reality Immersive Music Interfaces](http://smc2019.uma.es/articles/S3/S3_04_SMC2019_paper.pdf). *In Proceedings of the 2019 Sound and Music Computing Conference*, May 2019.
+- D. Johnson, D. Damian, and G. Tzanetakis. [OSC-XR: A Toolkit for Extended Reality Immersive Music Interfaces](http://smc2019.uma.es/articles/S3/S3_04_SMC2019_paper.pdf). *In Proceedings of the 2019 Sound and Music Computing Conference*, May 2019.
 
 ## Video Demo
 
