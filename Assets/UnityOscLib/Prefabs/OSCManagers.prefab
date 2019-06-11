@@ -50,7 +50,7 @@ MonoBehaviour:
     oscMessageHandler:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: UnityOscLib.UnityEventOscMessage, UnityOscLib, Version=0.0.0.0,
+      m_TypeName: UnityOscLib.UnityEventOscMessage, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
 --- !u!114 &7830125027313155797
 MonoBehaviour:
@@ -65,4 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlRateHz: 0
-  oscReceivers: []
+  oscReceivers:
+  - name: 
+    host: 
+    port: 0
