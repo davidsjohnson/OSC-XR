@@ -51,5 +51,3 @@ A script to handle trigger enter, stay, exit events when a `GameObject` is confi
 - `/trigger/enter 2 3 -0.5, 1.5, 0.0` - Main Trigger ID, `Collider` ID, collider's enter position x, y, z
 - `/trigger/stay 2 3 -0.3, 1.5, 0.0`  - Main Trigger ID,  `Collider` ID, collider's current position x, y, z
 - `/trigger/exit 2 3 0.5, 1.5, 0.0`   - Main Trigger ID,  `Collider` ID, collider's exit position x, y, z
-
-See the [OSC-XR Scripts](Assets/OSC-XR/Scripts) directory README for full controller details
