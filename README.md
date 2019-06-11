@@ -4,6 +4,10 @@
 
 OSC-XR is a toolkit for rapidly prototyping immersive musical environments in XR using [Open Sound Control (OSC)](http://opensoundcontrol.org/introduction-osc), a communication protocol widely used in audio software. Influenced by multi-touch OSC controllers, OSC-XR provides designers with a wide range of readily available components in order to make designing immersive environment more accessible to researchers and sound designers.
 
+If using OSC-XR for research please cite:
+
+- D. Johnson, D. Damian and G. Tzanetakis. [OSC-XR: A Toolkit for Extended Reality Immersive Music Interfaces](http://smc2019.uma.es/articles/S3/S3_04_SMC2019_paper.pdf). *In Proceedings of the 2019 Sound and Music Computing Conference*, May 2019.
+
 ## Video Demo
 
 [![Click to view demo](oscxr_demo.png)](https://vimeo.com/318143040)
